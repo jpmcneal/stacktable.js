@@ -119,14 +119,14 @@
         if (rowIndex === 0) {
           // the main heading goes into the markup variable
           if (displayHeader) {
-            markup += '<tr class=" '+tr_class +' "><th class="st-head-row st-head-row-main" colspan="2">'+$(this).find('>th,>td').eq(headIndex).html()+'</th></tr>';
+            markup += '<tr class=" '+tr_class +' "><th class="st-head-row st-head-row-main" colspan="2" role="columnheader">'+$(this).find('>th,>td').eq(headIndex).html()+'</th></tr>';
           }
         } else {
           // for the other rows, put the "headIndex" cell as the head for that row
           // then iterate through the key/values
           $(this).find('>td,>th').each(function(cellIndex) {
             if (cellIndex === headIndex) {
-              headMarkup = '<tr class="'+ tr_class+'"><th class="st-head-row" colspan="2">'+$(this).html()+'</th></tr>';
+              headMarkup = '<tr class="'+ tr_class+'"><th class="st-head-row" colspan="2" role="rowheader">'+$(this).html()+'</th></tr>';
             } else {
               if ($(this).html() !== ''){
                 bodyMarkup += '<tr class="' + tr_class +'">';
